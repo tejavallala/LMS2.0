@@ -2,13 +2,13 @@ pipeline {
   agent any
 
   tools {
-    nodejs "NodeJS 18"
+    nodejs "NodeJS"
   }
 
   stages {
     stage('Checkout') {
       steps {
-        git 'https://github.com/tejavallala/LMS2.0.git'
+        git branch: 'main', url: 'https://github.com/tejavallala/LMS2.0.git'
       }
     }
 
