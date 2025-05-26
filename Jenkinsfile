@@ -15,7 +15,8 @@ pipeline {
     stage('Install Backend Dependencies') {
       steps {
         dir('Backend-CLMS-using-MERN') {
-          sh 'npm install'
+         bat 'npm install'
+
         }
       }
     }
@@ -23,7 +24,7 @@ pipeline {
     stage('Install Frontend Dependencies') {
       steps {
         dir('frontend-CLMS-using-MERN') {
-          sh 'npm install'
+          bat 'npm install'
         }
       }
     }
@@ -31,7 +32,7 @@ pipeline {
     stage('Build Frontend') {
       steps {
         dir('frontend-CLMS-using-MERN') {
-          sh 'npm run build'
+          bat 'npm run build'
         }
       }
     }
@@ -39,7 +40,7 @@ pipeline {
     stage('Run Backend Tests') {
       steps {
         dir('Backend-CLMS-using-MERN') {
-          sh 'npm test || echo "No tests configured"'
+          bat 'npm test || echo "No tests configured"'
         }
       }
     }
