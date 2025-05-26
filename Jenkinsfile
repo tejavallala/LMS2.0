@@ -15,8 +15,7 @@ pipeline {
     stage('Install Backend Dependencies') {
       steps {
         dir('Backend-CLMS-using-MERN') {
-         bat 'npm install'
-
+          bat 'npm install'
         }
       }
     }
